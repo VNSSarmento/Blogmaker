@@ -1,0 +1,15 @@
+{
+    "name": "sarme/blog",
+    "autoload": {
+        "psr-4": {
+            "Sarme\\Blog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VNSSarmento",
+            "email": "sarmento.ramos11@gmail.com"
+        }
+    ],
+    "require": {}
+}

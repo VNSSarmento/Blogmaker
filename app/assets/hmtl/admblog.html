@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração - Beauty Glam</title>
+  <link rel="stylesheet" href="../css/admin-style.css">
+</head>
+
+<body>
+  <header class="admin-header">
+    <div class="container">
+      <h1>Beauty Glam - Painel Admin</h1>
+      <nav>
+        <a href="index.html">← Voltar ao Blog</a>
+        <a href="#">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="admin-section">
+      <h2>Gerenciar Posts</h2>
+      <button onclick="toggleForm()">+ Novo Post</button>
+
+      <!-- Formulário oculto -->
+      <form class="form-post" id="form-post" method="post" action="create_post.php">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="conteudo">Assunto:</label>
+        <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="toggleForm()">Cancelar</button>
+      </form>
+
+
+      <ul class="admin-list">
+        <li>
+          <strong>Maquiagem Noturna Perfeita</strong> — 05/07/2025
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+        <li>
+          <strong>Segredos para uma Pele Radiante</strong> — 03/07/2025
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+        <li>
+          <strong>Como Criar Olhos Marcantes</strong> — 01/07/2025
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="admin-section">
+      <h2>Gerenciar Produtos</h2>
+      <button onclick="toggleForm2()">+ Novo Produto</button>
+
+      <!-- Formulário oculto -->
+      <form class="form-post" id="form-post2" method="post" action="create_post.php">
+        <label for="nome_produto">Nome do Produto:</label>
+        <input type="text" id="nome_produto" name="nome_produto" required>
+
+        <label for="preco">Preço do Produto:</label>
+        <input id="preco" name="conteudo" type="number" required>
+
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="toggleForm2()">Cancelar</button>
+      </form>
+
+
+      <ul class="admin-list">
+        <li>
+          <strong>Base Líquida Ultra HD</strong> — R$ 89,90
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+        <li>
+          <strong>Paleta de Sombras Sunset</strong> — R$ 156,90
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+        <li>
+          <strong>Batom Matte Longa Duração</strong> — R$ 45,90
+          <span>
+            <button>Editar</button>
+            <button>Excluir</button>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="admin-section">
+      <h2>Categorias</h2>
+      <button onclick="toggleForm3()">+ Nova Categoria</button>
+
+      <form class="form-post" id="form-post3" method="post" action="create_post.php">
+        <label for="titulo">Título da Categoria:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="conteudo">Assunto:</label>
+        <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="toggleForm3()">Cancelar</button>
+      </form>
+
+      <ul class="admin-list">
+        <li>Tutoriais de Maquiagem <button>Excluir</button></li>
+        <li>Cuidados com a Pele <button>Excluir</button></li>
+        <li>Produtos Testados <button>Excluir</button></li>
+        <li>Tendências 2025 <button>Excluir</button></li>
+        <li>Maquiagem para Iniciantes <button>Excluir</button></li>
+        <li>Looks Especiais <button>Excluir</button></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>&copy; 2025 Beauty Glam Admin</p>
+  </footer>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('form-post');
+      form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleForm2() {
+      const form = document.getElementById('form-post2');
+      form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+    }
+
+    
+    function toggleForm3() {
+      const form = document.getElementById('form-post3');
+      form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+
+</html>
