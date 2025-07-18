@@ -41,11 +41,11 @@
 
                     <article class="post">
                         <div class="post-image">
-                            <span>💄 Make Noturna</span>
+                            <span>💄 <?php echo $post['nome_categoria']?> </span>
                         </div>
                         <div class="post-content">
                             <h3><?= $post['titulo'] ?></h3>
-                            <div class="post-meta">Por Andriely Sarmento Tiburtino • <?= date('d M Y H:i:s', strtotime($data_post)) ?></div>
+                            <div class="post-meta">Por Andriely Tiburtino • <?= date('d M Y H:i:s', strtotime($data_post)) ?></div>
                             <p><?= substr($post['assunto'], 0, 50) . '...' ?></p>
                             <a href="" class="read-more" onclick="toggleConteudo(event, this)">Leia mais →</a>
                             <div class="conteudo-extra" style="display: none;">
