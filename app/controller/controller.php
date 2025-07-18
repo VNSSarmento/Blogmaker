@@ -76,4 +76,17 @@ class Usercontroller extends navcontroler
         return  $listacatg->listarIDposts($id);
     }
 
+     public function listaDeprodutos(){
+        $listaprod = new UserDAO();
+        return $listaprod->listaProdutos();
+     }
+
+     public function novoProduto($nome,$preco,$linkFoto,$link){
+        $produto = new UserDAO;
+        $precofloat = str_replace(',','.',$preco);
+        $produto->novoProduto($nome,$precofloat,$linkFoto,$link);
+        header("Location: /index.php?rota=admin.php");
+        exit;
+     }
+
 }

@@ -54,4 +54,14 @@ class UserDAO {
         $stmt->execute([$id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function listaProdutos(){
+        $stmt = $this->conn->prepare("SELECT * FROM produtos");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function novoProduto($nome,$preco,$linkFoto,$link){
+        $stmt = $this->conn->prepare("INSERT INTO produtos(nome, preco, foto_link, link_compra) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$nome, $preco, $linkFoto, $link]);
+    }
 }

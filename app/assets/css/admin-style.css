@@ -90,6 +90,9 @@ button:hover {
   background-color: #a93257;
 }
 
+span button {
+ margin-bottom: 1px;
+}
 
 .admin-footer {
   text-align: center;

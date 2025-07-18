@@ -7,7 +7,6 @@
   <title>Administração - Beauty Glam</title>
   <link rel="stylesheet" href="/app/assets/css/admin-style.css">
 
-
 </head>
 
 <body>
@@ -40,7 +39,7 @@
         <select name="id_categoria" id="categorias">
           <option>Selecione uma Categoria</option>
           <?php foreach ($listarcatg as $categorias) { ?>
-            <option value="<?= htmlspecialchars($categorias['id'])?>">
+            <option value="<?= htmlspecialchars($categorias['id']) ?>">
               <?= $categorias['nome_categoria'] ?>
             </option>
           <?php } ?>
@@ -57,7 +56,7 @@
         <?php foreach ($listas as $post) { ?>
           <input type="hidden" name="id">
           <li class="post-item" style="cursor:pointer;">
-            <strong><?= $post['titulo'] ?></strong> <?= $post['data_post'] ?> 
+            <strong><?= $post['titulo'] ?></strong> <?= $post['data_post'] ?>
 
             <p class="post-conteudo" style="display:none; margin-top: 5px;">
               <?= nl2br(htmlspecialchars($post['assunto'])) ?>
@@ -91,7 +90,7 @@
         <input type="text" id="nome_produto" name="nome_produto" required>
 
         <label for="preco">Preço do Produto:</label>
-        <input id="preco" name="conteudo" type="number" required>
+        <input id="preco" name="preco" type="text" required>
 
         <label for="imagem_produto">Foto do produto:</label>
         <input id="imagem_produto" name="imagem_produto" type="text" required>

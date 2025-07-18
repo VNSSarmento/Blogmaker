@@ -49,7 +49,7 @@
                             <p><?= substr($post['assunto'], 0, 50) . '...' ?></p>
                             <a href="" class="read-more" onclick="toggleConteudo(event, this)">Leia mais →</a>
                             <div class="conteudo-extra" style="display: none;">
-                                <p><?= $post['assunto']?></p>
+                                <p><?= $post['assunto'] ?></p>
                             </div>
                         </div>
                     </article>
@@ -60,29 +60,22 @@
             <aside class="sidebar">
                 <div class="widget">
                     <h3>Produtos em Destaque</h3>
-                    <a href="" target="_blank" style="text-decoration: none;">
-                        <div class="product-item">
-                            <div class="product-image">Base HD</div>
-                            <div class="product-info">
-                                <h4>Base Líquida Ultra HD</h4>
-                                <div class="product-price">R$ 89,90</div>
+                    <?php foreach ($listaprod as $produtos) { 
+                        $arred = round($produtos['preco'],2);
+                        $preco = str_replace('.',',',$arred);
+                        ?>
+                        <a href="<?= htmlspecialchars($produtos['link_compra']) ?>" target="_blank" style="text-decoration: none;">
+                            <div class="product-item">
+                                <div class="product-image" >  
+                                    <img src="<?= htmlspecialchars($produtos['foto_link']) ?>" alt="Base HD">
+                                </div>
+                                <div class="product-info">
+                                    <h4><?=$produtos['nome'] ?></h4>
+                                    <div class="product-price">R$ <?=$preco ?></div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                        <div class="product-item">
-                            <div class="product-image">Paleta</div>
-                            <div class="product-info">
-                                <h4>Paleta de Sombras Sunset</h4>
-                                <div class="product-price">R$ 156,90</div>
-                            </div>
-                        </div>
-                    <div class="product-item">
-                        <div class="product-image">Batom</div>
-                        <div class="product-info">
-                            <h4>Batom Matte Longa Duração</h4>
-                            <div class="product-price">R$ 45,90</div>
-                        </div>
-                    </div>
+                        </a>
+                    <?php } ?>
                 </div>
 
                 <div class="widget">
