@@ -17,7 +17,7 @@ class UserDAO {
     }
 
     public function listarPost(){
-        $stmt = $this->conn->prepare("SELECT * FROM posts");
+        $stmt = $this->conn->prepare("SELECT A.*,B.nome_categoria FROM posts  AS A INNER JOIN categorias AS B ON A.id_categoria = B.id");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

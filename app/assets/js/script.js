@@ -14,10 +14,11 @@ function toggleForm3() {
     form.style.display = (form.style.display === 'block') ? 'none' : 'block';
 }
 
-function editarPost(titulo, assunto, id) {
+function editarPost(titulo, assunto, postId, id_categoria) {
     document.getElementById('titulo').value = titulo;
     document.getElementById('conteudo').value = assunto;
-    document.getElementById('editar_id').value = id;
+    document.getElementById('editar_id').value = postId;
+    document.getElementById('categorias').value = id_categoria;
 
     const form = document.getElementById('form-post');
     form.style.display = 'block';

@@ -35,11 +35,11 @@
         <label for="conteudo">Assunto:</label>
         <textarea id="conteudo" name="assunto" rows="10" required></textarea>
 
-        <label for="categoria">Categoria:</label>
+        <label for="categorias">Categoria:</label>
         <select name="id_categoria" id="categorias">
           <option>Selecione uma Categoria</option>
           <?php foreach ($listarcatg as $categorias) { ?>
-            <option value="<?= htmlspecialchars($categorias['id']) ?>">
+            <option id="categoria" value="<?= htmlspecialchars($categorias['id']) ?>">
               <?= $categorias['nome_categoria'] ?>
             </option>
           <?php } ?>

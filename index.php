@@ -10,7 +10,7 @@ switch ($rota) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (isset($_POST['excluir_id'])) {
-                $teste = 'if do excluir';
+
                 $id_post = $_POST['excluir_id'];
                 $user->deletarPost($id_post);
 
@@ -22,7 +22,7 @@ switch ($rota) {
                 $user->newPost($titulo,$assunto,$id_categoria);
 
             } else if (!empty($_POST['editar_id']) && isset($_POST['titulo']) && isset($_POST['assunto']) && isset($_POST['id_categoria'])) {
-                $teste = 'if do editar';
+
                 $id_post = $_POST['editar_id'];
                 $titulo = $_POST['titulo'];
                 $assunto = $_POST['assunto'];
@@ -44,9 +44,7 @@ switch ($rota) {
                 $user->novoProduto($novoprod['nome_produto'],$novoprod['preco'],$novoprod['link_img'], $novoprod['link']);
             }
         }
-        
-        print_r($_POST);
-        echo $teste;
+
         $listas = $user->listarPosts();
         $listarcatg = $user->listaDeCategorias();
         include './app/views/admin.php';
